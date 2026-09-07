@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#09090b" />
+    <meta
+      name="description"
+      content="DrinksTC is currently under construction."
+    />
+    <title>Under construction | DrinksTC</title>
+
+    <style>
+      :root {
+        color-scheme: dark;
+        --background: #09090b;
+        --foreground: #ffffff;
+        --surface: #18181b;
+        --surface-soft: #27272a;
+        --border: #3f3f46;
+        --muted: #a1a1aa;
+        --primary: #ec4899;
+        --primary-hover: #f472b6;
+        --secondary: #22d3ee;
+        --radius: 8px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+        margin: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        overflow: hidden;
+        background: var(--background);
+        color: var(--foreground);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body::before,
+      body::after {
+        position: fixed;
+        z-index: 0;
+        width: 28rem;
+        height: 28rem;
+        border-radius: 999px;
+        filter: blur(120px);
+        opacity: 0.12;
+        content: "";
+        pointer-events: none;
+      }
+
+      body::before {
+        top: -14rem;
+        right: -8rem;
+        background: var(--primary);
+      }
+
+      body::after {
+        bottom: -17rem;
+        left: -9rem;
+        background: var(--secondary);
+      }
+
+      ::selection {
+        background: var(--primary);
+        color: var(--foreground);
+      }
+
+      .page {
+        position: relative;
+        z-index: 1;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .header {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .header-inner,
+      .content,
+      .footer-inner {
+        width: min(calc(100% - 2rem), 72rem);
+        margin-inline: auto;
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        min-height: 4.5rem;
+      }
+
+      .brand {
+        margin: 0;
+        font-size: 1.125rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .content {
+        flex: 1;
+        display: grid;
+        place-items: center;
+        padding-block: 4rem;
+      }
+
+      .message {
+        width: min(100%, 46rem);
+        border-left: 4px solid var(--primary);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        background: var(--surface);
+        padding: clamp(1.5rem, 5vw, 3rem);
+        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.3);
+      }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin: 0 0 1rem;
+        color: var(--primary-hover);
+        font-size: 0.875rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .status::before {
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 999px;
+        background: var(--primary);
+        box-shadow: 0 0 0.9rem rgb(236 72 153 / 0.75);
+        content: "";
+      }
+
+      h1 {
+        max-width: 12ch;
+        margin: 0;
+        font-size: clamp(2.75rem, 10vw, 6rem);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -0.055em;
+      }
+
+      .description {
+        max-width: 34rem;
+        margin: 1.5rem 0 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        line-height: 1.7;
+      }
+
+      .footer {
+        color: var(--muted);
+        font-size: 0.875rem;
+      }
+
+      .footer-inner {
+        border-top: 1px solid var(--border);
+        padding-block: 1.25rem;
+      }
+
+      .footer p {
+        margin: 0;
+      }
+
+      @media (max-width: 30rem) {
+        .header-inner,
+        .content,
+        .footer-inner {
+          width: min(calc(100% - 1.5rem), 72rem);
+        }
+
+        .message {
+          padding: 1.5rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .message {
+          animation: enter 600ms ease-out both;
+        }
+
+        @keyframes enter {
+          from {
+            opacity: 0;
+            transform: translateY(12px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="header-inner">
+          <p class="brand">DrinksTC</p>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="message" aria-labelledby="page-title">
+          <p class="status">Coming soon</p>
+          <h1 id="page-title">Under construction.</h1>
+          <p class="description">
+            We&rsquo;re getting the party ready. Check back soon.
+          </p>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <p>&copy; DrinksTC</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
